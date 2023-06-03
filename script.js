@@ -4,7 +4,6 @@ let tasks = document.getElementById('tasks');
 let tasklist = localStorage.getItem('data')?JSON.parse((localStorage).getItem('data')):[];
 
 tasklist.forEach((task)=>{
-task = task.toLowerCase();
 task = task[0].toUpperCase()+task.slice(1);
 let li = document.createElement("li");
 li.classList.add("newnote");
@@ -23,7 +22,6 @@ addBtn.addEventListener('click',() => {
     }
     else{
         inptext.value = '';
-        newNote = newNote.toLowerCase();
         newNote = newNote[0].toUpperCase()+newNote.slice(1);
         tasklist.push(newNote);
         localStorage.setItem('data',JSON.stringify(tasklist));
